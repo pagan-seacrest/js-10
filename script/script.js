@@ -56,6 +56,10 @@ pass.addEventListener("blur", () => {
         opened.style.display = "inline";
         hidden.style.display = "none";
         pass.type = "password";
+    } else {
+        passConfirm.disabled = false;
+        opened2.style.display = "inline";
+        hidden2.style.display = "none";
     }
 });
 passConfirm.addEventListener("blur", () => {
@@ -63,5 +67,14 @@ passConfirm.addEventListener("blur", () => {
         opened2.style.display = "inline";
         hidden2.style.display = "none";
         passConfirm.type = "password";
+    }
+});
+
+passConfirm.addEventListener("click", () => {
+    if (pass.value === "") {
+        passConfirm.disabled = true;
+        passConfirm.value = "";
+        opened2.style.display = "none";
+        hidden2.style.display = "none";
     }
 });
